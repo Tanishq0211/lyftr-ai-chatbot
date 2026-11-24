@@ -70,4 +70,11 @@ $missing = Invoke-WebRequest "$api/sessions/demo-down-$run/messages" -SkipHttpEr
 
 **Narration:** “Vercel serves the frontend, Railway hosts the API, and the public repository includes the Docker setup and backend tests.”
 
-Upload the recording to YouTube as **Unlisted**, or upload it to Google Drive and choose **Anyone with the link → Viewer**. Open the video link in a signed-out or private browser window. Enter the working video URL alongside the public repository, frontend, and backend URLs in the [assignment submission form](https://docs.google.com/forms/d/e/1FAIpQLSfaPS5_NliZuEjhYXppeafBrNM9u0hp-q-vT8vDuv9GU-0THA/viewform).
+Upload the recording to YouTube as **Unlisted**, or upload it to Google Drive and choose **Anyone with the link → Viewer**. Open the video link in a signed-out or private browser window. The [assignment submission form](https://docs.google.com/forms/d/e/1FAIpQLSfaPS5_NliZuEjhYXppeafBrNM9u0hp-q-vT8vDuv9GU-0THA/viewform) has four project fields:
+
+| Field | Value |
+| --- | --- |
+| GitHub Assignment Repo Link | [Public GitHub repository](https://github.com/Tanishq0211/lyftr-ai-chatbot) |
+| Frontend URL | Production Vercel URL from the README |
+| Backend API Base URL | Production Railway base URL from the README |
+| Demo Video URL | The public or unlisted URL for your recording |

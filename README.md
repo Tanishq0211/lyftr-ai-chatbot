@@ -4,7 +4,9 @@ Relay is a multi-turn AI chat built with React, FastAPI, LiteLLM, and SQLite. Ev
 
 ## Live URLs
 
-Public deployment is pending. The local frontend runs at [localhost:3000](http://localhost:3000) and the API at [localhost:8000](http://localhost:8000/health) when started with Docker Compose.
+- **Source:** [Public GitHub repository](https://github.com/Tanishq0211/lyftr-ai-chatbot)
+- **Public frontend and API:** Deployment pending account authorization.
+- **Local Docker:** [Frontend](http://localhost:3000) and [API health](http://localhost:8000/health).
 
 ### Deploy publicly
 
@@ -115,6 +117,8 @@ uv run --no-project --python 3.12 --with-requirements requirements-dev.txt pytho
 ```
 
 Run `python scripts/verify_live.py <backend-origin> --origin <frontend-origin>` from the repository root to verify the HTTP contract against real providers. It uses four successful inference calls. The output includes a session ID for checking persistence after a restart.
+
+See [VERIFICATION.md](VERIFICATION.md) for recorded test results and the assignment checklist.
 
 ### Demo outline
 
