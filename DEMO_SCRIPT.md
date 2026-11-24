@@ -1,11 +1,11 @@
 # Relay demo recording
 
-Record your screen and narrate in your own voice. Aim for **2 minutes 25 seconds**. Open the deployed frontend from the README in one browser tab. Open PowerShell 7 in another window and stage the commands below before starting.
+Record your screen and narrate in your own voice. Aim for **2 minutes 25 seconds**. Open [the deployed frontend](https://lyftr-ai-chatbot-omega.vercel.app) in one browser tab. Open PowerShell 7 in another window and stage the commands below before starting.
 
 ## Setup
 
 ```powershell
-$api = (Read-Host 'Paste the public backend URL from README').TrimEnd('/')
+$api = 'https://relay-api-production-96613d26.up.railway.app'
 $run = [guid]::NewGuid().ToString('N').Substring(0,8)
 function Send-DemoChat($session, $message, $simulate = '') {
     $headers = @{}
@@ -75,6 +75,6 @@ Upload the recording to YouTube as **Unlisted**, or upload it to Google Drive an
 | Field | Value |
 | --- | --- |
 | GitHub Assignment Repo Link | [Public GitHub repository](https://github.com/Tanishq0211/lyftr-ai-chatbot) |
-| Frontend URL | Production Vercel URL from the README |
-| Backend API Base URL | Production Railway base URL from the README |
+| Frontend URL | [Vercel frontend](https://lyftr-ai-chatbot-omega.vercel.app) |
+| Backend API Base URL | [Railway API base](https://relay-api-production-96613d26.up.railway.app) |
 | Demo Video URL | The public or unlisted URL for your recording |

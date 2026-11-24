@@ -5,12 +5,14 @@ Relay is a multi-turn AI chat built with React, FastAPI, LiteLLM, and SQLite. Ev
 ## Live URLs
 
 - **Source:** [Public GitHub repository](https://github.com/Tanishq0211/lyftr-ai-chatbot)
-- **Public frontend and API:** Deployment pending account authorization.
+- **Frontend:** [Relay on Vercel](https://lyftr-ai-chatbot-omega.vercel.app)
+- **API base:** [Railway backend](https://relay-api-production-96613d26.up.railway.app)
+- **Health:** [GET /health](https://relay-api-production-96613d26.up.railway.app/health)
 - **Local Docker:** [Frontend](http://localhost:3000) and [API health](http://localhost:8000/health).
 
 ### Deploy publicly
 
-1. Create a Railway service using `backend` as the root directory and `/backend/railway.toml` as the configuration file when deploying from Git. Attach a volume at `/data`, keep one replica, and use `DATABASE_URL=sqlite:////data/app.db`. The Docker container listens on Railway's injected `PORT`. If the mounted volume is owned by root, set `RAILWAY_RUN_UID=0` in Railway to permit SQLite writes. [Railway volume documentation](https://docs.railway.com/volumes/reference)
+1. Create a Railway Dockerfile service using `backend` as the root and set its health check to `/health`. Attach a volume at `/data`, keep one replica, and use `DATABASE_URL=sqlite:////data/app.db`. The container listens on Railway's injected `PORT`. If the mounted volume is owned by root, set `RAILWAY_RUN_UID=0` in Railway to permit SQLite writes. [Railway volume documentation](https://docs.railway.com/volumes/reference)
 2. Set `LLM_API_KEYS` to two distinct provider keys using Railway's service variables. Set `LLM_MODELS=gemini/gemini-3.5-flash-lite,groq/openai/gpt-oss-20b` for Gemini as primary and Groq as fallback. Keys and models must use the same order. Set `ENABLE_FAILURE_SIMULATION=true` for evaluation, then generate a public domain for the backend.
 3. Import the GitHub repository into a personal Vercel Hobby workspace. Choose the Vite preset, set the root directory to `frontend`, and use `dist` as the output directory. Set `VITE_API_BASE_URL` to the Railway HTTPS origin before building. Add the exact production Vercel origin to Railway's `ALLOWED_ORIGINS` and apply the backend changes. [Vercel Hobby plan](https://vercel.com/docs/plans/hobby)
 4. Check `/health` and complete the verification steps below against the public URLs. Railway's Free plan includes one 0.5 GB volume and $1 of monthly usage. It sleeps when idle and pauses service if the allowance runs out. New eligible accounts can also receive trial credits. [Railway Free plan](https://docs.railway.com/pricing/free-plan)
